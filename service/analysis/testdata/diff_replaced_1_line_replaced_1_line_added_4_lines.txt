@@ -1,0 +1,32 @@
+diff --git a/service/testdata.txt b/service/testdata.txt
+index 0dc899a..f9998d9 100644
+--- a/service/testdata.txt
++++ b/service/testdata.txt
+@@ -1,6 +1,6 @@
+ T1
+ H2
+-I
++I3
+ S
+ I
+ S
+@@ -12,7 +12,7 @@ T
+ D
+ A
+ A
+-1
++13
+ 2
+ 3
+ 4
+@@ -28,6 +28,10 @@ A4
+ A5
+ A6
+ A7
++B1
++B2
++B3
++B4
+ A8
+ A9
+ A10

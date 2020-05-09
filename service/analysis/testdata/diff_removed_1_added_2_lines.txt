@@ -1,0 +1,21 @@
+diff --git a/service/testdata_renamed.txt b/service/testdata_renamed.txt
+index 02cbbf6..ce20c5e 100644
+--- a/service/testdata_renamed.txt
++++ b/service/testdata_renamed.txt
+@@ -1,5 +1,7 @@
++11111111111111111111
+ T1
+ H2
++33333333333333333333
+ I3
+ I
+ I2
+@@ -30,7 +32,7 @@ A
+ A14
+ A16
+ A17
+-CCCCCCCCCCCCCCCCCCCCCC
++
+ A18
+ A19
+ A20

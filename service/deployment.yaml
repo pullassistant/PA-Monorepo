@@ -1,0 +1,54 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: github-app
+spec:
+  selector:
+    matchLabels:
+      run: github-app
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: github-app
+    spec:
+      containers:
+        - name: pullassistant-github-app
+          image: github.com/domsu/pullassistant
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: github-app
+  namespace: default
+spec:
+  ports:
+    - port: 8080
+      protocol: TCP
+      targetPort: 8080
+  selector:
+    run: github-app
+  type: NodePort
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: github-app
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: ipv4-address
+    networking.gke.io/managed-certificates: github-app
+spec:
+  backend:
+    serviceName: github-app
+    servicePort: 8080
+---
+apiVersion: networking.gke.io/v1beta1
+kind: ManagedCertificate
+metadata:
+  name: github-app
+spec:
+  domains:
+    - app.pullassistant.com

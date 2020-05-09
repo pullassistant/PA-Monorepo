@@ -1,0 +1,17 @@
+diff --git a/service/testdata.txt b/service/testdata.txt
+index 8fe04c5..8e70f10 100644
+--- a/service/testdata.txt
++++ b/service/testdata.txt
+@@ -1,4 +1,4 @@
+-T
++T1
+ H
+ I
+ S
+@@ -11,5 +11,4 @@ S
+ T
+ D
+ A
+-T
+ A
+\ No newline at end of file

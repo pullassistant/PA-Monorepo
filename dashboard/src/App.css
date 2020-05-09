@@ -1,0 +1,42 @@
+.App {
+    margin: 0 auto;
+}
+
+.App-navbar-wrapper {
+    background-color: #f5f6fa;
+}
+
+.App-navbar {
+    max-width: 1124px;
+    margin: 0 auto;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand > img {
+    height: 40px;
+    width: 40px;
+    margin-right: 20px;
+}
+
+.App-content {
+    max-width: 1124px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.App-content-nav {
+    margin-top: 40px;
+}
+
+.App-divider {
+    border-bottom: 1px solid #edebed;
+}
+
+.divider {
+    border-bottom: 1px solid #edebed;
+    margin-top: 20px;
+}

@@ -1,0 +1,10 @@
+.repository {
+    border-radius: 5px;
+    border: 1px solid #edebed;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.repository > a {
+    margin-left: 10px;
+}

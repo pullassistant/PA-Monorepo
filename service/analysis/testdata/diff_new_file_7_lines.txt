@@ -1,0 +1,14 @@
+diff --git a/service/testdata2.txt b/service/testdata2.txt
+new file mode 100644
+index 0000000..c67ef8e
+--- /dev/null
++++ b/service/testdata2.txt
+@@ -0,0 +1,7 @@
++N
++E
++W
++D
++A
++T
++A
+\ No newline at end of file

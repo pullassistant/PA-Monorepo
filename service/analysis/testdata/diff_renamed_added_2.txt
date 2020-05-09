@@ -1,0 +1,17 @@
+diff --git a/service/testdata2.txt b/service/testdata3_renamed.txt
+similarity index 70%
+rename from service/testdata2.txt
+rename to service/testdata3_renamed.txt
+index b3957c6..dfafcde 100644
+--- a/service/testdata2.txt
++++ b/service/testdata3_renamed.txt
+@@ -4,4 +4,6 @@ W
+ D
+ A
+ T
+-2
+\ No newline at end of file
++2
++3
++4
+\ No newline at end of file

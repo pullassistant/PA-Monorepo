@@ -1,0 +1,4 @@
+diff --git a/service/testdata.txt b/service/testdata_renamed.txt
+similarity index 100%
+rename from service/testdata.txt
+rename to service/testdata_renamed.txt

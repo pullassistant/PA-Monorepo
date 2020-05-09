@@ -1,0 +1,27 @@
+server:
+  address: "0.0.0.0"
+  port: 8080
+  public_url: "https://app.pullassistant.com"
+github:
+  v3_api_url: "https://api.github.com"
+  web_url: "https://github.com"
+  app:
+    integration_id:
+    webhook_secret:
+    private_key:
+  oauth:
+    client_id:
+    client_secret:
+app_configuration:
+  tracking_id: UA-145781573-1
+  app_name: pull-assistant
+  comment_app_name: pull-assistant[bot]
+  cookie_secret:
+  debug: no
+  dashboard_url: https://app.pullassistant.com
+  marketplace_url: https://github.com/marketplace/pull-assistant
+  marketplace_open_source_plan_id: 3142
+  marketplace_free_plan_id: 3210
+  marketplace_free_plan_number: 4
+  marketplace_paid_plan_number: 5
+  marketplace_org_plan_number: 6

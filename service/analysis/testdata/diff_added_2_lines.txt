@@ -1,0 +1,13 @@
+diff --git `a/service/testdata.txt b/service/testdata.txt
+index 64fce94..63fcc05 100644
+--- a/service/testdata.txt
++++ b/service/testdata.txt
+@@ -5,6 +5,8 @@ S
+ I
+ S
+ T
++A1
++A2
+ E
+ S
+ T

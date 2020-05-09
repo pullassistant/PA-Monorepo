@@ -1,0 +1,25 @@
+.installation {
+    margin-top: 20px;
+}
+
+.installation-avatar {
+    border-radius: 20%;
+    width: 60px;
+    height: 60px;
+}
+
+.installation-username {
+    margin-left: 10px;
+}
+
+.installation-plan {
+    margin-left: 30px;
+}
+
+.installation-actions {
+    margin-top: 20px;
+}
+
+.installation-actions > a {
+    margin-right: 10px;
+}

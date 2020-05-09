@@ -1,0 +1,57 @@
+{% func GetPRCommentContent(comment PRCommentData) %}
+<img align="right" src="{%s comment.CommitByCommitReviewScoreImgUrl %}" alt="Score: {%f.2 float64(comment.CommitByCommitReviewScore) %}"/>
+
+Best reviewed: {% if comment.BestReviewedCommitByCommit %} **commit by commit** {% else %} **with all changes**{% endif %}
+___
+<details>
+<summary>
+Optimal code review plan {% stripspace %}
+{% if comment.OptimalCodeReviewWarningsCount > 0 || comment.OptimalCodeReviewSquashedCommitsCount > 0 %}
+(
+    {% if comment.OptimalCodeReviewWarningsCount == 1 %} {%d comment.OptimalCodeReviewWarningsCount %}{% space %}warning {% endif %}
+    {% if comment.OptimalCodeReviewWarningsCount > 1 %} {%d comment.OptimalCodeReviewWarningsCount %}{% space %}warnings {% endif %}
+    {% if comment.OptimalCodeReviewWarningsCount > 0 && comment.OptimalCodeReviewSquashedCommitsCount > 0 %},{% space %}{% endif %}
+    {% if comment.OptimalCodeReviewSquashedCommitsCount == 1 %} {%d comment.OptimalCodeReviewSquashedCommitsCount %}{% space %}commit squashed{% endif %}
+    {% if comment.OptimalCodeReviewSquashedCommitsCount > 1 %} {%d comment.OptimalCodeReviewSquashedCommitsCount %}{% space %}commits squashed{% endif %}
+)
+{% endif %}
+{% endstripspace %}
+<br/>
+<br/>
+</summary>
+   {% for _, commit := range comment.OptimalCodeReview %}
+    {% if len(commit.Warnings) > 0 || len(commit.SquashedCommits) > 0 %}
+<details>
+<summary>
+<a href="{%s commit.CommitUrl %}">{%s commit.CommitName %}</a>
+{% if len(commit.SquashedCommits) > 0 %}
+<img align="right" src="https://pullassistant.com/assets/merge.png"/>
+{% endif %}
+{% if len(commit.Warnings) > 0 %}
+<img align="right" src="https://pullassistant.com/assets/warning.png"/>
+{% endif %}
+</summary>
+<br/>
+
+        {% if len(commit.SquashedCommits) > 0 %}
+> Squashed {%d len(commit.SquashedCommits) %} commits:
+            {% for _, squashedCommit := range commit.SquashedCommits %}
+> - <a href="{%s squashedCommit.CommitUrl %}">{%s squashedCommit.CommitName %}</a>
+            {% endfor %}
+        {% endif %}
+
+
+        {% if len(commit.Warnings) > 0 %}
+            {% for _, warning := range commit.Warnings %}
+> `{%s warning.FileName %}` {%f.0 float64(warning.Interference*100) %}% changes removed in <a href="{%s warning.InterferingCommitUrl %}">{%s warning.InterferingCommitName %}</a>
+            {% endfor %}
+        {% endif %}
+</details>
+    {% else %}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{%s commit.CommitUrl %}">{%s commit.CommitName %}</a>
+   {% endif %}
+   {% endfor %}
+</details>
+
+> Powered by [Pull Assistant](https://pullassistant.com). Last update [{%s comment.LastUpdateFromText %}]({%s comment.LastUpdateFromUrl %}) ... [{%s comment.LastUpdateToText %}]({%s comment.LastUpdateToUrl %}). Read the [comment docs](https://pullassistant.com).
+{% endfunc %}
